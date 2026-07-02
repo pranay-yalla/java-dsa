@@ -1,0 +1,108 @@
+/*
+class Node {
+    int data;
+    Node next;
+
+    Node(int d)
+    {
+        data = d;
+        next = null;
+    }
+}*/
+
+class Solution {
+    public Node segregate(Node head) {
+        if(head==null || head. next==null) return head;
+        // code here
+        Node node0=null, node1=null, node2=null;
+        Node node0head=null,node1head=null,node2head=null,temp=head;
+        while(temp!=null)
+        {
+            int data=temp.data;
+            if(data==0)
+            {
+                if(node0==null)
+                {
+                    node0head=temp;
+                
+                    node0=temp;
+                    
+                }
+                else
+                {
+                node0.next=temp;
+                node0=node0.next;}}
+             else if(data==1)
+                {
+                    if(node1==null)
+                    {
+                        node1head=temp;
+                        node1=temp;
+                    }
+                    else
+                    {
+                        node1.next=temp;
+                        node1=node1.next;
+                    }
+                
+                    
+                }
+                else
+                {
+                    if(node2==null)
+                    {
+                        node2head=temp;
+                        node2=temp;
+                    }
+                    else
+                    
+                    {
+                        node2.next=temp;
+                        node2=node2.next;
+                    }
+                }
+                temp=temp.next;
+            }
+            //  node2. next=null;
+              if(node0head==null && node1head==null){
+                  node2. next=null;
+                  return  node2head;
+                  
+              }
+              else if(node1head==null && node2head==null) {
+                  node0.next=null;
+              return node0head;}
+              else if(node0head==null && node2head==null) 
+              {
+                  node1. next=null;
+                  return node1head;
+              }
+              else if(node0head==null) 
+              {
+                  node1. next=node2head;
+                  node2. next=null;
+                  return node1head;
+              }
+              else if(node1head==null) 
+              {node0.next=node2head;
+              node2. next=null;
+              return node0head;
+              }
+              else if(node2head==null) {
+                  node0. next=node1head;
+                  node1. next=null;
+                  node1. next=null;
+                  return node0head;
+              }
+              else
+              {
+               
+                  node2. next=null;
+                  node0. next=node1head;
+                  node1. next=node2head;
+                  return node0head;
+              }
+       //       return head;
+}
+    
+}
