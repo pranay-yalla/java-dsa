@@ -1,0 +1,31 @@
+class Solution {
+    
+    public long sumAndMultiply(int n) {
+        
+        long res=reverse(n, false);
+    
+      res= reverse(res,true) ;
+       return res;
+        }
+        private static long reverse(long 
+        n, boolean  sumreturn) {
+       //  return   reverse(n);
+       int  sum=0;
+      
+	long  rev=0;
+	while(n>0)
+	{
+		if(n%10!=0)
+		{
+			sum+=n%10;
+			rev=rev*10+(n%10);
+		}
+		n/=10;
+	}
+	//long result=reverse(rev);
+	if(!sumreturn) 
+	return  rev;
+	
+	return rev*sum;
+	}}
+    
