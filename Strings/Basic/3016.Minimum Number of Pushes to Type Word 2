@@ -1,0 +1,29 @@
+class Solution {
+    public int minimumPushes(String s) {
+        int[] a=new int[26];
+		for(int i=0;i<s.length();i++){
+			int ch=s.charAt(i)-97;
+			a[ch]++;
+		}
+		int c=0;
+		Arrays.sort(a);
+/*		for(int i=0,j=a.length-1;i<j;i++,j--)
+		{
+		    int temp=a[i];
+		    a[i]=a[j];
+		    a[j]=temp;
+		}*/
+		for(int i=0;i<a.length;i++){
+			if(i<=1)
+			c+=4*a[i];
+			else if(i<=9)
+			c+=3*a[i];
+			else if(i<=17)
+			c+=2*a[i];
+			else
+			c+=a[i];
+			
+		}
+		return c;
+    }
+}
