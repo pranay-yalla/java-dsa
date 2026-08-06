@@ -1,0 +1,25 @@
+class Solution {
+    public int smallestNumber(int n, int t) {
+        for(int i=n;i<=n+10;i++) // here using while(true) will be optimal
+{
+	int product=product(i);
+	if(product%t==0)
+	return i;
+
+}
+return n;
+	}
+private static  int product(int n)
+{
+	int product=1;
+	while(n!=0)
+	{
+if(n%10==0) return 0;
+		product*=n%10;
+		n/=10;
+	}
+	return product;
+}
+    
+}
+
