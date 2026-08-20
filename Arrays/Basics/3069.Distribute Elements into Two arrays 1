@@ -1,0 +1,25 @@
+class Solution {
+    public int[] resultArray(int[] nums) {
+        int size=nums.length;
+        int[] arr1=new int[size-1];
+        int[] arr2=new int[size-1];
+        arr1[0]=nums[0];
+        arr2[0]=nums[1];
+        int arr1Pointer=0, arr2Pointer=0;
+        for(int i=2;i<size;i++)
+        {
+           if(arr1[arr1Pointer]>arr2[arr2Pointer]) 
+           
+               arr1[++arr1Pointer]=nums[i];
+                    
+                    else
+                    arr2[++arr2Pointer]=nums[i];
+        }
+        int i=0;
+        for( i=0;i<=arr1Pointer;i++)
+        nums[i]=arr1[i];
+        for(int j=0;j<=arr2Pointer;j++)
+        nums[i++]=arr2[j];
+        return nums;
+    }
+}
